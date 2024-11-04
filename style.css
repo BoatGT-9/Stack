@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+#block-container,
+#stack-container {
+    width: 200px;
+    min-height: 300px;
+    margin: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column-reverse; /* แสดงบล็อกจากล่างขึ้นบน */
+    align-items: center;
+    background-color: #fff; /* พื้นหลังสีขาว */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาเบาเพื่อให้ดูโดดเด่น */
+}
+
+.block1,
+.block2 {
+    width: 100px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 2px 0;
+    cursor: grab;
+    border-radius: 5px; /* ทำมุมให้มน */
+    transition: transform 0.2s; /* เอฟเฟกต์เมื่อมีการคลิก */
+}
+
+.block1 {
+    background-image: url(kirito.png);
+}
+
+.block2 {
+    background-image: url(asuna.png);
+}
+
+.block1:active,
+.block2:active {
+    transform: scale(0.95); /* ทำให้บล็อกเล็กลงเมื่อกด */
+}
+
+.status-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.status-message,
+.count-message,
+.position-message {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
